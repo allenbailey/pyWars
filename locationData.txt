@@ -1,0 +1,3 @@
+Dawlish,Gods waitingroom,dawlish.jpg,15,20
+Teignmouth,Seaside shanty,teignmouth.jpg,15,20  
+Ashcombe,Rural dude, ashcombe.jpg, 10, 25
