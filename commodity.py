@@ -3,6 +3,7 @@ import random
 
 
 class commodity:
+    #constructor for the commority object
     def __init__(self, name, minPrice, maxPrice, currentPrice, crashChance, boomChance, description, imageFile,
                  availability):
         self.name = name
@@ -14,7 +15,8 @@ class commodity:
         self.description = description
         self.imageFile = imageFile
         self.availability = availability
-
+    #Method to randomise the current price of a commodity instance
+    #incorporating crash and boom events
     def randomise(self):
 
         #code events
@@ -29,7 +31,7 @@ class commodity:
             #print ("dice Roll ",str(diceRoll))
             self.currentPrice = int(random.randint(int(self.minPrice), int(self.maxPrice)))
             #self.currentPrice=random.randint(1,100)
-
+    #Method to dynamically determine availability of a commodity each time it's called
     def isAvailable(self):
         diceRoll = random.randint(1, 100)
         if diceRoll <= int(self.availability):
@@ -38,14 +40,15 @@ class commodity:
             return False
 
     def isCrash(self):
-        #handle a crash or boom.. .
+        #handle a crash .. .
         print(self.name + " is crashing!")
 
     def isBoom(self):
+        #Handle a boom
         print(self.name + " is booming!")
 
-
-class commodityReader:
+#Class for holding commodities
+class commodityContainer:
     def __init__(self, sourceFile, name):
         self.name = name
         self.sourceFile = sourceFile
@@ -58,7 +61,7 @@ class commodityReader:
                 commodity(row[0], int(row[1]), int(row[2]), row[3], row[4], row[5], row[6], row[7], row[8]))
             #print(self.masterList)
 
-
+    #Method to dump all contained commodities
     def dump(self):
         for x in range(0, len(self.masterList)):
             if self.masterList[x].isAvailable():
@@ -66,7 +69,7 @@ class commodityReader:
                 print(self.masterList[x].name + " costs " + str(self.masterList[x].currentPrice))
             else:
                 print(self.masterList[x].name + " ---------------------------")  #not available
-
+    #Method which randmises each contained commodity
     def randmomiseLocation(self):
         for x in self.masterList:
             x.randomise()

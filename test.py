@@ -15,7 +15,7 @@ import location
 
 
 def main():
-    world = location.locationReader("locationData.txt", "The World")
+    world = location.locationContainer("locationData.txt", "The World")
     world.dump()
     world.rando()
     world.dump()

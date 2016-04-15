@@ -3,22 +3,28 @@ import commodity
 
 
 class location:
+    #Constructor for the location object
     def __init__(self, name, description, imageFile, riskFactor, eventChance):
         self.name = name
         self.description = description
         self.imageFile = imageFile
         self.riskFactor = riskFactor
         self.eventChance = eventChance
-        self.commodititiesList = commodity.commodityReader("commodityData.txt", self.name + "Contents")
+        #Each location contains a commodityContainer
+        self.commodititiesList = commodity.commodityContainer("commodityData.txt", self.name + "Contents")
 
+    #Method which calls the dump method of a locations commoditiesList object. .
     def dumpContent(self):
         self.commodititiesList.dump()
-
+    #Method which calls the RandomiseLocation method of a locations commoditiesList object. .
     def randomiseLocation(self):
         self.commodititiesList.randmomiseLocation()
 
 
-class locationReader:
+class locationContainer:
+    #Constructor for a container of locations
+    #populated from a supplied text file
+    #each location object contains a commoditiesList object which holds commoditi
     def __init__(self, sourceFile, name):
         self.name = name
         self.sourceFile = sourceFile
