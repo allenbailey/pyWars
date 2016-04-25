@@ -1,2 +1,2 @@
-Coffee,1,100,50,10,10,Hot Java,coffee.jpg,75
-Tea,1,100,50,10,10,Earl Grey - hot!,tea.jpg,95
+1,Coffee,1,100,50,10,10,Hot Java,coffee.jpg,75
+2,Tea,1,100,50,10,10,Earl Grey - hot!,tea.jpg,95

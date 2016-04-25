@@ -12,14 +12,24 @@
 
 #import commodity
 import location
+import player
+import playerCommodity
 
 
 def main():
+
+    p1= player.player("Bailey")
+
+
+
+
     world = location.locationContainer("locationData.txt", "The World")
     world.dump()
     world.rando()
     world.dump()
 
+    print ("--------------------------------------------------------")
+    p1.playersBag.displayBagContents()
 
 if __name__ == '__main__':
     main()

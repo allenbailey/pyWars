@@ -4,8 +4,9 @@ import random
 
 class commodity:
     #constructor for the commority object
-    def __init__(self, name, minPrice, maxPrice, currentPrice, crashChance, boomChance, description, imageFile,
+    def __init__(self, id,name, minPrice, maxPrice, currentPrice, crashChance, boomChance, description, imageFile,
                  availability):
+        self.id=id
         self.name = name
         self.minPrice = minPrice
         self.maxPrice = maxPrice
@@ -58,7 +59,7 @@ class commodityContainer:
         for row in csv_f:
             #print (row)
             self.masterList.append(
-                commodity(row[0], int(row[1]), int(row[2]), row[3], row[4], row[5], row[6], row[7], row[8]))
+                commodity(int(row[0]), (row[1]), int(row[2]), row[3], row[4], row[5], row[6], row[7], row[8],row[9]))
             #print(self.masterList)
 
     #Method to dump all contained commodities

@@ -1,4 +1,4 @@
-
+import bag
 
 
 class player:
@@ -8,4 +8,4 @@ class player:
         self.startCash=2000
         self.startBagCapacity=80
         self.startDebt=0
-        
+        self.playersBag=bag.bag(self.name + "'s Bag ", self.startBagCapacity)
