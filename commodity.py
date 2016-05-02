@@ -16,6 +16,7 @@ class commodity:
         self.description = description
         self.imageFile = imageFile
         self.availability = availability
+        self.quantity=0
     #Method to randomise the current price of a commodity instance
     #incorporating crash and boom events
     def randomise(self):
@@ -60,6 +61,7 @@ class commodityContainer:
             #print (row)
             self.masterList.append(
                 commodity(int(row[0]), (row[1]), int(row[2]), row[3], row[4], row[5], row[6], row[7], row[8],row[9]))
+                commodity(int(row[0]))
             #print(self.masterList)
 
     #Method to dump all contained commodities
